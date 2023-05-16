@@ -23,5 +23,10 @@ library(nycflights13)
 Now make one graph of anything you want from the 'nycflights13' dataset in the code chunk below:
 
 ```{r}
-# your code here
+flights |>
+  ggplot(mapping = aes(x = dep_delay)) +
+  facet_wrap(~origin) +
+  geom_histogram() +
+  labs(title = "Histogram of Delays of Flights from Different Origins to New York in 2013", 
+  x = "Departure Delay")
 ```
